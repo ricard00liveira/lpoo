@@ -1,11 +1,10 @@
 package controller;
 import model.Carro;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class CarroController {
+
     public static void main(String[] args) {
         Carro c1 = new Carro();
         System.out.println(c1);
@@ -39,10 +38,20 @@ public class CarroController {
         System.out.println(carroFind);
 
         //Ordenando a lista pelo Id
-
         carrosList.sort(Comparator.comparing(Carro::getId));
         System.out.println("\nColeção do tipo List em ordem crescente, chave id");
         System.out.println(carrosList);
+
+        //Map
+        Map<Long, Carro> carrosMap = new HashMap<>();
+        carrosMap.put(c1.getId(), c1);
+        carrosMap.put(c2.getId(), c2);
+        carrosMap.put(c3.getId(), c3);
+        carrosMap.put(c4.getId(), c4);
+        carrosMap.put(c5.getId(), c5);
+
+        System.out.println("\nImprimindo Coleção MAP:\n" + carrosMap);
+        System.out.println("Imprimindo Carro id=3 da coleção MAP:" + carrosMap.get(c3.getId()));
 
     }
 }
