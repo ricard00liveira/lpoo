@@ -15,6 +15,11 @@ public class Aluno {
     public Aluno() {
     }
 
+    public Aluno(Long id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
+
     public Aluno(Long id, int cpf, String nome, String sobrenome, String email) {
         this.id = id;
         this.cpf = cpf;
