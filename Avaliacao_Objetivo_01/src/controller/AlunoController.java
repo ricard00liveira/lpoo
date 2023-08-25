@@ -7,8 +7,10 @@ import java.util.stream.Collectors;
 
 public class AlunoController {
     public static void main(String[] args) {
-        //Criar, no mínimo, 6 instâncias da classe de modelo, alternando entre construtores do tipo
-        //padrão e parametrizado.
+        /*
+        Criar, no mínimo, 6 instâncias da classe de modelo, alternando entre construtores do tipo
+        padrão e parametrizado.
+        */
 
         Aluno a1 = new Aluno();
         System.out.println(a1);
@@ -23,8 +25,10 @@ public class AlunoController {
         Aluno a6 = new Aluno(6L,"Laísa");
         System.out.println(a6);
 
-        //Os dois objetos criados com o construtor padrão devem ter seus estados modificados, em
-        //todos os seus atributos, com os métodos setters
+        /*
+        Os dois objetos criados com o construtor padrão devem ter seus estados modificados, em
+        todos os seus atributos, com os métodos setters
+        */
 
         a1.setId(1L);
         a1.setCpf(101);
@@ -54,12 +58,14 @@ public class AlunoController {
                 ", email = '" + a2.getEmail() + '\'' +
                 '}');
 
-        //No controlador criado na questão 1 adicione dois tipos de coleções de objetos, List
-        //e Map. Em cada coleção adicione todos os objetos que você criou nesse controlador, tendo o
-        //cuidado de inserir os objetos ordenados pelo campo id (se não tiver um, crie-o), na ordem
-        //crescente, e imprima esses objetos
+        /*
+        No controlador criado na questão 1 adicione dois tipos de coleções de objetos, List
+        e Map. Em cada coleção adicione todos os objetos que você criou nesse controlador, tendo o
+        cuidado de inserir os objetos ordenados pelo campo id (se não tiver um, crie-o), na ordem
+        crescente, e imprima esses objetos
+        List
+        */
 
-        //List
         List<Aluno> alunosList = new ArrayList<>();
         alunosList.add(a1);
         alunosList.add(a2);
@@ -81,21 +87,34 @@ public class AlunoController {
 
         System.out.println("\nImprimindo Coleção Map:\n" + alunosMap);
 
-        //Também imprima o objeto de id=5 de cada coleção, se
-        //essa operação for possível na coleção.
+        /*
+        Também imprima o objeto de id=5 de cada coleção, se
+        essa operação for possível na coleção.
+        List id 5
+        */
 
-        //List id 5
         Aluno alunoFind = alunosList.stream().filter(c -> c.getId() == 5).findAny().orElse(null);
         System.out.println("\nList Find: #5\n" + alunoFind);
         //Map id 5
         System.out.println("Imprimindo id=5 do Map:\n"+ alunosMap.get(a5.getId()));
 
-        //Por fim, ordene os objetos pelo campo id, na ordem
-        //decrescente, com uma das técnicas apresentadas em sala de aula e imprima as coleções que
-        //você reordenou.
+        /*
+        System.out.println("Imprimindo id=5 do Map:\n"+ alunosMap.get(5L));
+        Por fim, ordene os objetos pelo campo id, na ordem
+        decrescente, com uma das técnicas apresentadas em sala de aula e imprima as coleções que
+        você reordenou.
+        List
+        */
 
-        //List
-        System.out.println(alunosList.stream().sorted(Comparator.comparing(Aluno::getId).reversed()).collect(Collectors.toList()));
+        System.out.println("\nList ordenada decrescente:");
+        alunosList.sort(Comparator.comparing(Aluno::getId).reversed());
         System.out.println(alunosList);
+        /* Método para apenas imprimir a lista ordenada, pois a lista foi alterada
+        System.out.println(alunosList.stream().sorted(Comparator.comparing(Aluno::getId)).collect(Collectors.toList()));
+        */
+
+        //Map
+        System.out.println("\nMap ordenada descrescente:");
+        System.out.println("Operação de ordenação não permitida neste tipo de Coleção.");
     }
 }
