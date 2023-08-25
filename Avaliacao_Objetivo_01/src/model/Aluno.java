@@ -79,7 +79,7 @@ public class Aluno {
                 ", nome='" + nome + '\'' +
                 ", sobrenome='" + sobrenome + '\'' +
                 ", email='" + email + '\'' +
-                '}';
+                '}' + "\n";
     }
 
     //Modifica hashCode

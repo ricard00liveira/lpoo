@@ -2,6 +2,9 @@ package controller;
 
 import model.Aluno;
 
+import java.util.*;
+import java.util.stream.Collectors;
+
 public class AlunoController {
     public static void main(String[] args) {
         //Criar, no mínimo, 6 instâncias da classe de modelo, alternando entre construtores do tipo
@@ -50,5 +53,49 @@ public class AlunoController {
                 ", sobrenome = '" + a2.getSobrenome() + '\'' +
                 ", email = '" + a2.getEmail() + '\'' +
                 '}');
+
+        //No controlador criado na questão 1 adicione dois tipos de coleções de objetos, List
+        //e Map. Em cada coleção adicione todos os objetos que você criou nesse controlador, tendo o
+        //cuidado de inserir os objetos ordenados pelo campo id (se não tiver um, crie-o), na ordem
+        //crescente, e imprima esses objetos
+
+        //List
+        List<Aluno> alunosList = new ArrayList<>();
+        alunosList.add(a1);
+        alunosList.add(a2);
+        alunosList.add(a3);
+        alunosList.add(a4);
+        alunosList.add(a5);
+        alunosList.add(a6);
+
+        System.out.println("\nLista de Alunos:\n" + alunosList);
+
+        //Map
+        Map<Long, Aluno> alunosMap = new HashMap<>();
+        alunosMap.put(a1.getId(),a1);
+        alunosMap.put(a2.getId(),a2);
+        alunosMap.put(a3.getId(),a3);
+        alunosMap.put(a4.getId(),a4);
+        alunosMap.put(a5.getId(),a5);
+        alunosMap.put(a6.getId(),a6);
+
+        System.out.println("\nImprimindo Coleção Map:\n" + alunosMap);
+
+        //Também imprima o objeto de id=5 de cada coleção, se
+        //essa operação for possível na coleção.
+
+        //List id 5
+        Aluno alunoFind = alunosList.stream().filter(c -> c.getId() == 5).findAny().orElse(null);
+        System.out.println("\nList Find: #5\n" + alunoFind);
+        //Map id 5
+        System.out.println("Imprimindo id=5 do Map:\n"+ alunosMap.get(a5.getId()));
+
+        //Por fim, ordene os objetos pelo campo id, na ordem
+        //decrescente, com uma das técnicas apresentadas em sala de aula e imprima as coleções que
+        //você reordenou.
+
+        //List
+        System.out.println(alunosList.stream().sorted(Comparator.comparing(Aluno::getId).reversed()).collect(Collectors.toList()));
+        System.out.println(alunosList);
     }
 }
