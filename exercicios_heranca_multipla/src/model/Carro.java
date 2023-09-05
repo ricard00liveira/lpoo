@@ -3,11 +3,16 @@ package model;
 public class Carro extends Veiculo implements Automovel{
     private int capacidadePortaMalas;
 
+    public Carro(int numeroDeEixos, String propulsao, String marca, String modelo, int anoFabricacao, int capacidadePortaMalas) {
+        super(numeroDeEixos, propulsao, marca, modelo, anoFabricacao);
+        this.capacidadePortaMalas = capacidadePortaMalas;
+    }
+
     @Override
     public String toString() {
-        return "Carro { " +
+        return "\nCarro {" +
                 "capacidadePortaMalas=" + capacidadePortaMalas +
-                '}';
+                "} " + super.toString();
     }
 
     @Override

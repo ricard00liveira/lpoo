@@ -62,7 +62,7 @@ public abstract class Veiculo {
 
     @Override
     public String toString() {
-        return "Veiculo {" +
+        return "\nVeiculo {" +
                 "numeroDeEixos=" + numeroDeEixos +
                 ", propulsao='" + propulsao + '\'' +
                 ", marca='" + marca + '\'' +
