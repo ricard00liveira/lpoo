@@ -45,8 +45,8 @@ public class AnimalController {
         animais.forEach(a -> {
             a.mover(2,2);
             a.desenhar();
+            System.out.println(a);
         });
-        System.out.println(animais);
 
 //        Reposicione os personagens que pertençam a classe Cachorro, nas coordenadas (8, 8),
 //        os desenhe e imprima-os
@@ -56,15 +56,19 @@ public class AnimalController {
         animais.forEach(a -> {
             if (a instanceof Cachorro) {
                 a.mover(8,8);
+                a.desenhar();
+                System.out.println(a);
             }
             if (a instanceof Peixe){
                 ((Peixe) a).mover(5,5,5);
+                a.desenhar();
+                System.out.println(a);
             }
             if (a instanceof Passaro) {
                 ((Passaro) a).mover(5,5,5);
+                a.desenhar();
+                System.out.println(a);
             }
-            a.desenhar();
         });
-        System.out.println(animais);
     }
 }
