@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/exercicio1_1/exercicio1_1.iml" filepath="$PROJECT_DIR$/exercicio1_1/exercicio1_1.iml" />
       <module fileurl="file://$PROJECT_DIR$/exercicio2_1/exercicio2_1.iml" filepath="$PROJECT_DIR$/exercicio2_1/exercicio2_1.iml" />
       <module fileurl="file://$PROJECT_DIR$/exercicios_heranca_multipla/exercicios_heranca_multipla.iml" filepath="$PROJECT_DIR$/exercicios_heranca_multipla/exercicios_heranca_multipla.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exercicios_poliformismo/exercicios_poliformismo.iml" filepath="$PROJECT_DIR$/exercicios_poliformismo/exercicios_poliformismo.iml" />
       <module fileurl="file://$PROJECT_DIR$/lpoo_aulas.iml" filepath="$PROJECT_DIR$/lpoo_aulas.iml" />
     </modules>
   </component>
