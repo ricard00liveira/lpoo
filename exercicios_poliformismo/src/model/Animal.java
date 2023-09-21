@@ -5,8 +5,23 @@ public abstract class Animal {
     protected double y;
 
     public void mover(double x, double y) {
-        System.out.printf("Moveu para x: %.2f, y: %.2f",x,y);
+        this.x = x;
+        this.y = y;
+    }
+
+    public Animal() {
+    }
+
+    public Animal(double x, double y) {
+        this.x = x;
+        this.y = y;
     }
 
     public abstract void desenhar();
+
+    @Override
+    public String toString() {
+        return "";
+    }
 }
+
