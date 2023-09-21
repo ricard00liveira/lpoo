@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Avaliacao_Objetivo_02/Avaliacao_Objetivo_02.iml" filepath="$PROJECT_DIR$/Avaliacao_Objetivo_02/Avaliacao_Objetivo_02.iml" />
       <module fileurl="file://$PROJECT_DIR$/exercicio1_1/exercicio1_1.iml" filepath="$PROJECT_DIR$/exercicio1_1/exercicio1_1.iml" />
       <module fileurl="file://$PROJECT_DIR$/exercicio2_1/exercicio2_1.iml" filepath="$PROJECT_DIR$/exercicio2_1/exercicio2_1.iml" />
       <module fileurl="file://$PROJECT_DIR$/exercicios_heranca_multipla/exercicios_heranca_multipla.iml" filepath="$PROJECT_DIR$/exercicios_heranca_multipla/exercicios_heranca_multipla.iml" />
