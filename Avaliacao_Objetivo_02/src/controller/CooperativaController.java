@@ -20,7 +20,7 @@ public class CooperativaController {
 
         ContaCorrente cc1 = new ContaCorrente(2000);
         System.out.println(cc1);
-        ContaCorrente cc2 = new ContaCorrente(3000);
+        ContaCorrente cc2 = new ContaCorrente(5200);
         System.out.println(cc2);
         ContaCorrente cc3 = new ContaCorrente(4000);
         System.out.println(cc3);
@@ -76,34 +76,51 @@ public class CooperativaController {
         c3.setQdeCotas(600);
 
 //        f. A partir da (s) coleção (ões), imprima todos os associados, ordenados pelo critério de
-//        número de cotas, em ordem decrescente. E faça o programa calcular e imprimir os
-//        associados com o maior número de cotas no sistema.
+//        número de cotas, em ordem decrescente.
         System.out.println(associados);
         associados.sort(Comparator.comparing(Associado::getQdeCotas).reversed());
         System.out.println("\nOrdenado decrescente qdeCotas: \n" + associados);
 
+//        E faça o programa calcular e imprimir os
+//        associados com o maior número de cotas no sistema.
+        final int[] i = {0};
+        associados.forEach(a -> {
+            if (a.getQdeCotas() > i[0]) {
+                i[0] = a.getQdeCotas();
+            }
+        });
+        System.out.println("\nMAIOR COTA: " + i[0] + "\n\nAssociados com maior cota:");
+        associados.forEach(a -> {
+            if (a.getQdeCotas() == i[0]) {
+                System.out.println(a);
+            }
+        });
+
 //        g. A partir da (s) coleção (ões), imprima todas as contas cadastradas no sistema, ordenadas
 //        pelo critério saldo, em ordem decrescente. E, imprima todas associados que sejam
-//        Associado e possua conta cadastradas no sistema, em qualquer ordem. Também faça o
-//        programa imprimir a lista de contas com maior saldo bancário.
+//        Associado e possua conta cadastradas no sistema, em qualquer ordem.
         contas.sort(Comparator.comparing(Conta::getSaldo).reversed());
         System.out.println("\nOrdenado decrescente Saldo: \n" + contas);
 
         System.out.println("\nAssociados com Conta:");
         associados.forEach(a -> {
-            if(a instanceof ContaCorrente) {
+            if (a instanceof ContaCorrente) {
                 System.out.println(a);
             }
         });
 
-        System.out.println("\nConta Associado com maior saldo: ");
-        List<Conta> associadosaldo = new ArrayList<>();
-        contas.forEach(c-> {
-            if(c instanceof Associado) {
-                associadosaldo.add(c);
+//      Também faça o programa imprimir a lista de contas com maior saldo bancário.
+
+        double maxb = contas.stream()//cria um fluxo para a coleção
+                .mapToDouble(Conta::getSaldo) //converte de Conta para Double
+                .max() //ache o máximo no fluxo
+                .getAsDouble(); //converte para Double
+
+        System.out.println("\nMAIOR SALDO: " + maxb + "\nContas maior saldo:");
+        for (Conta c : contas) {
+            if (c.getSaldo() == maxb) {
+                System.out.println(c);
             }
-        });
-        associadosaldo.sort(Comparator.comparing(Conta::getSaldo).reversed());
-        System.out.println(associadosaldo);
+        }
     }
 }
