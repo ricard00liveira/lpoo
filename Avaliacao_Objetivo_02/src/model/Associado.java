@@ -1,7 +1,7 @@
 package model;
 
 public interface Associado {
-    protected int qdeCotas;
-    protected double valorCota;
+    int qdeCotas = 0;
+    double valorCota = 0;
     public abstract double lucros(int qdeCotas, double valorCota);
 }
