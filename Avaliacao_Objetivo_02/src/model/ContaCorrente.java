@@ -1,6 +1,8 @@
 package model;
 
 public class ContaCorrente extends Conta implements Associado{
+    private int qdeCotas;
+    private double valorCota;
 
     public ContaCorrente() {
     }
@@ -9,11 +11,29 @@ public class ContaCorrente extends Conta implements Associado{
         super(saldo);
     }
 
+    public int getQdeCotas() {
+        return qdeCotas;
+    }
+
+    public void setQdeCotas(int qdeCotas) {
+        this.qdeCotas = qdeCotas;
+    }
+
+    public double getValorCota() {
+        return valorCota;
+    }
+
+    public void setValorCota(double valorCota) {
+        this.valorCota = valorCota;
+    }
+
     @Override
     public String toString() {
-        return "ContaCorrente {" +
-                "saldo=" + saldo +
-                '}';
+        return "ContaCorrente{" +
+                "qdeCotas=" + qdeCotas +
+                ", valorCota=" + valorCota +
+                ", saldo=" + saldo +
+                "} ";
     }
 
     @Override

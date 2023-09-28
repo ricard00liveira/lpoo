@@ -2,12 +2,38 @@ package model;
 
 public class Cliente implements Associado{
 
+    private int qdeCotas;
+    private double valorCota;
     private String nome;
 
     public Cliente() {
     }
 
     public Cliente(String nome) {
+        this.nome = nome;
+    }
+
+    public int getQdeCotas() {
+        return qdeCotas;
+    }
+
+    public void setQdeCotas(int qdeCotas) {
+        this.qdeCotas = qdeCotas;
+    }
+
+    public double getValorCota() {
+        return valorCota;
+    }
+
+    public void setValorCota(double valorCota) {
+        this.valorCota = valorCota;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
         this.nome = nome;
     }
 

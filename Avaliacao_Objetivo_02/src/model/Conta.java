@@ -18,8 +18,16 @@ public abstract class Conta  {
     }
 
     public void atualiza(double taxa) {
-        this.saldo *= taxa;
+        this.saldo += (this.saldo*taxa);
 
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
     }
 
     @Override
