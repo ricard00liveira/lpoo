@@ -9,7 +9,4 @@ public class Funcionario {
     private String cidade;
     private String estado;
 
-    public boolean manterFunc(int matricula) {
-        return true;
-    }
 }
