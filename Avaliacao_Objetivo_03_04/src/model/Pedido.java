@@ -78,11 +78,12 @@ public class Pedido {
     public String toString() {
         return "\nPedido{" +
                 "numero=" + numero +
-                ", data=" + data +
+                ", data=" + data.get(Calendar.DAY_OF_MONTH) + "/" + data.get(Calendar.MONTH) + "/" +data.get(Calendar.YEAR) +
                 ", valor=" + valor +
                 ", vendedor=" + vendedor +
                 ", tipo=" + tipo +
                 ", itens=" + itens +
                 '}';
     }
+
 }

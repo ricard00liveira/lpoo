@@ -42,8 +42,6 @@ public class Vendedor extends  Funcionario {
     @Override
     public String toString() {
         return "\nVendedor{" +
-                "local='" + local + '\'' +
-                ", pedidos=" + pedidos +
-                "} " + super.toString();
+                super.getNome();
     }
 }

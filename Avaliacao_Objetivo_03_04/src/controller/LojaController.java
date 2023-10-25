@@ -35,11 +35,21 @@ public class LojaController {
         Item i3 = new Item(3, 1.0, 10, p3);
         Item i4 = new Item(4, 5.0, 20, p4);
 
-        itens.clear();
-        itens.add(i3);
-        itens.add(i4);
+        List<Item> itens2 = new ArrayList<>();
+        itens2.add(i3);
+        itens2.add(i4);
 
-        Pedido pedido2 = new Pedido(2, new GregorianCalendar(2023,10,24), p3.getPreco()* i3.getQuantidade()+p4.getPreco()* i4.getQuantidade(), v1, Tipo.PENDENTE, itens);
+        Pedido pedido2 = new Pedido(2, new GregorianCalendar(2023,10,24), p3.getPreco()* i3.getQuantidade()+p4.getPreco()* i4.getQuantidade(), v1, Tipo.PENDENTE, itens2);
+
+        List<Pedido> vendas = new ArrayList<>();
+        vendas.add(pedido1);
+        vendas.add(pedido2);
+
+        System.out.println("Relatório de vendas:");
+        System.out.println(vendas);
+
+        System.out.println("\nEstoque de produtos:\n");
+
 
 
 

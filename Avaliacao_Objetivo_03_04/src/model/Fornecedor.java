@@ -60,10 +60,7 @@ public class Fornecedor {
     @Override
     public String toString() {
         return "\nFornecedor{" +
-                "cnpj=" + cnpj +
-                ", contato='" + contato + '\'' +
-                ", nome='" + nome + '\'' +
-                ", produtos=" + produtos +
+                "nome='" + nome + '\'' +
                 '}';
     }
 }
