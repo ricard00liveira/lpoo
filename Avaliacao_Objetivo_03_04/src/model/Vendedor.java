@@ -12,15 +12,11 @@ public class Vendedor extends  Funcionario {
     public Vendedor() {
     }
 
-    public Vendedor(String local, List<Pedido> pedidos) {
-        this.local = local;
-        this.pedidos = pedidos;
-    }
-
     public Vendedor(int matricula, String nome, String endereco, String bairro, String cep, String cidade, String estado, String local) {
         super(matricula, nome, endereco, bairro, cep, cidade, estado);
         this.local = local;
     }
+
     public Vendedor(int matricula, String nome, String endereco, String bairro, String cep, String cidade, String estado, String local, List<Pedido> pedidos) {
         super(matricula, nome, endereco, bairro, cep, cidade, estado);
         this.local = local;

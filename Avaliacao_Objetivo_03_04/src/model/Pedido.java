@@ -16,6 +16,7 @@ public class Pedido {
     public Pedido() {
     }
 
+
     public Pedido(int numero, Calendar data, double valor, Vendedor vendedor, Tipo tipo, List<Item> itens) {
         this.numero = numero;
         this.data = data;

@@ -9,20 +9,28 @@ public class Produto {
     private int quantidade;
     private double preco;
     private Item item;
-    private Produto produto;
+    private Fornecedor fornecedor;
 
     //Construtores
 
     public Produto() {
     }
 
-    public Produto(int codigo, String nome, int quantidade, double preco, Item item, Produto produto) {
+    public Produto(int codigo, String nome, int quantidade, double preco, Fornecedor fornecedor) {
+        this.codigo = codigo;
+        this.nome = nome;
+        this.quantidade = quantidade;
+        this.preco = preco;
+        this.fornecedor = fornecedor;
+    }
+
+    public Produto(int codigo, String nome, int quantidade, double preco, Item item, Fornecedor fornecedor) {
         this.codigo = codigo;
         this.nome = nome;
         this.quantidade = quantidade;
         this.preco = preco;
         this.item = item;
-        this.produto = produto;
+        this.fornecedor = fornecedor;
     }
 
     public int getCodigo() {
@@ -65,12 +73,12 @@ public class Produto {
         this.item = item;
     }
 
-    public Produto getProduto() {
-        return produto;
+    public Fornecedor getFornecedor() {
+        return fornecedor;
     }
 
-    public void setProduto(Produto produto) {
-        this.produto = produto;
+    public void setFornecedor(Fornecedor fornecedor) {
+        this.fornecedor = fornecedor;
     }
 
     @Override
@@ -81,7 +89,7 @@ public class Produto {
                 ", quantidade=" + quantidade +
                 ", preco=" + preco +
                 ", item=" + item +
-                ", produto=" + produto +
+                ", fornecedor=" + fornecedor +
                 '}';
     }
 }
