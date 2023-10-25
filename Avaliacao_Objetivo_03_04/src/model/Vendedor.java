@@ -11,6 +11,12 @@ public class Vendedor extends  Funcionario {
 
     public Vendedor() {
     }
+
+    public Vendedor(String local, List<Pedido> pedidos) {
+        this.local = local;
+        this.pedidos = pedidos;
+    }
+
     public Vendedor(int matricula, String nome, String endereco, String bairro, String cep, String cidade, String estado, String local) {
         super(matricula, nome, endereco, bairro, cep, cidade, estado);
         this.local = local;
@@ -35,5 +41,13 @@ public class Vendedor extends  Funcionario {
 
     public void setPedidos(List<Pedido> pedidos) {
         this.pedidos = pedidos;
+    }
+
+    @Override
+    public String toString() {
+        return "\nVendedor{" +
+                "local='" + local + '\'' +
+                ", pedidos=" + pedidos +
+                "} " + super.toString();
     }
 }
