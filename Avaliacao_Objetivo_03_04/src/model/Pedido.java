@@ -9,6 +9,6 @@ public class Pedido {
     private double valor;
     private Vendedor vendedor;
 
-    private TipoPedido tipo;
+    private Tipo tipo;
     private List<Item> item;
 }

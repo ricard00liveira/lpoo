@@ -1,5 +1,5 @@
 package model;
 
-public enum TipoPedido {
+public enum Tipo {
     ATENDIDO, PENDENTE, CANCELADO;
 }
