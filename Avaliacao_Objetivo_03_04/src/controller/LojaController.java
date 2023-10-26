@@ -48,8 +48,16 @@ public class LojaController {
         System.out.println("Relatório de vendas:");
         System.out.println(vendas);
 
-        System.out.println("\nEstoque de produtos:\n");
+        p1.setQuantidade(p1.getQuantidade() - i1.getQuantidade());
+        p2.setQuantidade(p2.getQuantidade() - i2.getQuantidade());
+        p3.setQuantidade(p3.getQuantidade() - i3.getQuantidade());
+        p4.setQuantidade(p4.getQuantidade() - i4.getQuantidade());
 
+        System.out.println("\nEstoque de produtos:\n");
+        System.out.println(p1.getNome() + " -> " + p1.getQuantidade() + "\n" +
+                           p2.getNome() + " -> " + p2.getQuantidade() + "\n" +
+                           p3.getNome() + " -> " + p3.getQuantidade() + "\n" +
+                           p4.getNome() + " -> " + p4.getQuantidade());
 
 
 
