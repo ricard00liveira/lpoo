@@ -60,6 +60,24 @@ public class LojaController {
                            p4.getNome() + " -> " + p4.getQuantidade());
 
 
+        /* Faça dois produtos receberem entrada de estoque, podendo vir de um mesmo
+        fornecedor. Registre esses eventos em uma coleção e imprima um relatório de todos os
+        fornecimentos, indicando o fornecedor, o produto, a data do fornecimento, o valor total de
+        cada fornecimento, e o custo total desses fornecimentos */
 
+        double t1 = p1.getPreco()*100;
+        double t2 = p2.getPreco()*50;
+
+        Fornecimento forn1 = new Fornecimento(new GregorianCalendar(2023,10,25), t1, f1, p1);
+        Fornecimento forn2 = new Fornecimento(new GregorianCalendar(2023,10,25), t2, f1, p2);
+
+        List<Fornecimento> fornecimentos = new ArrayList<>();
+        fornecimentos.add(forn1);
+        fornecimentos.add(forn2);
+
+        System.out.println("\nFORNECIMENTOS:");
+        System.out.println(fornecimentos);
+
+        System.out.println("\nCUSTO TOTAL FORNECIMENTOS: R$ " + fornecimentos.stream().mapToDouble(Fornecimento::getValorTotal).sum());
     }
 }

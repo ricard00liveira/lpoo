@@ -52,7 +52,7 @@ public class Fornecimento {
     @Override
     public String toString() {
         return "\nFornecimento{" +
-                "data=" + data +
+                "data=" + data.get(Calendar.DAY_OF_MONTH) + "/" + data.get(Calendar.MONTH) + "/" +data.get(Calendar.YEAR) +
                 ", valorTotal=" + valorTotal +
                 ", fornecedor=" + fornecedor +
                 ", produto=" + produto +
